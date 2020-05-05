@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/currentWeatherFragment">
+
+
+    <fragment
+        android:id="@+id/currentWeatherFragment"
+        android:name="happy.family.android.forecastapp.ui.weather.current.CurrentWeatherFragment"
+        android:label="current_weather_fragment"
+        tools:layout="@layout/current_weather_fragment" />
+
+
+    <fragment
+        android:id="@+id/futureListWeatherFragment"
+        android:name="happy.family.android.forecastapp.ui.weather.futur.list.FuturListWeatherFragment"
+        android:label="future_list_weather_fragment"
+        tools:layout="@layout/futur_list_weather_fragment" >
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@id/futureDetailWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/futureDetailWeatherFragment"
+        android:name="happy.family.android.forecastapp.ui.weather.futur.detail.FutureDetailWeatherFragment"
+        android:label="future_detail_weather_fragment"
+        tools:layout="@layout/future_detail_weather_fragment" >
+        <argument
+            android:name="dateString"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="happy.family.android.forecastapp.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+
+</navigation>
